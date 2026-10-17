@@ -21,7 +21,7 @@ with open("data.json","r") as file:
 
 
 st.subheader(data["chart_title"])
-st.bar_chart(data["data_point"],x="label",y="value")
+st.bar_chart(data["data_points"],x="label",y="value")
 
 activities = []
 for point in data[data.point]:
