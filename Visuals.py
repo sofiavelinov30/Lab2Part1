@@ -18,7 +18,7 @@ st.write("How I would spend an ideal weekend with a friend broken down into your
 # PART 1: GRAPHS FROM data.json
 with open("data.json","r") as file:
     data = json.load(file)
-    st.write(data)
+
 
 st.subheader(data["chart_title"])
 st.bar_chart(data["data_points"],x="label",y="value")
@@ -27,20 +27,20 @@ activities = []
 for point in data[data.points]:
     activities.append(point["Label"])
 
-if chosenActivity not in st.sessionState:
-    st.sessionState[chosenActivity] = activities
+if chosenActivity not in st.session_state:
+    st.session_state["chosenActivity"] = activities
 
 st.multiselect("What activities are you down to join me?",options = activities,key = "chosenActivity")
 selectedData = []
 
-for point in data[data.points]:
-    if point["Label"] in  st.sessionState[chosenActivity]:
+for point in data["data.point"]:
+    if point["Label"] in  st.session_state[chosenActivity]:
         selectedData.append(point)
 
 if selectedData:
     chartData = pd.DataFrame(selectedData)
 
-    pie = altair.Chart(chartData).markArc().encode(
+    pie = altair.Chart(chartData).mark_arc().encode(
         theta=alt.Theta("value:Q", title="Hours"),
         color=alt.Color("label:N", title="Activity")).properties(title="Our Weekend Adventures")
 
@@ -48,7 +48,6 @@ if selectedData:
 else:
     st.write("Please choose at least one") 
         
-    
 
 # PART 2: GRAPHS FROM data.csv
 # --- YOUR CODE GOES HERE ---
