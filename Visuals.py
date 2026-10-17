@@ -24,7 +24,7 @@ st.subheader(data["chart_title"])
 st.bar_chart(data["data_points"],x="label",y="value")
 
 activities = []
-for point in data[data.point]:
+for point in data["data.points"]:
     activities.append(point["Label"])
 
 if chosenActivity not in st.session_state:
@@ -33,7 +33,7 @@ if chosenActivity not in st.session_state:
 st.multiselect("What activities are you down to join me?",options = activities,key = "chosenActivity")
 selectedData = []
 
-for point in data["data.point"]:
+for point in data["data.points"]:
     if point["Label"] in  st.session_state[chosenActivity]:
         selectedData.append(point)
 
