@@ -38,11 +38,11 @@ for point in data["data_points"]:
         selectedData.append(point)
 
 if selectedData:
-    chartData = pd.DataFrame(selectedData)
+    chartData = pandas.DataFrame(selectedData)
 
     pie = altair.Chart(chartData).mark_arc().encode(
-        theta=alt.Theta("value:Q", title="Hours"),
-        color=alt.Color("label:N", title="Activity")).properties(title="Our Weekend Adventures")
+        theta=altair.Theta("value:Q", title="Hours"),
+        color=altair.Color("label:N", title="Activity")).properties(title="Our Weekend Adventures")
 
     st.altair_chart(pie)
 else:
