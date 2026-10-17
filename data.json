@@ -1,0 +1,26 @@
+{
+    "chart_title": "Hours spent in an ideal weekend with a friend!",
+    "data_points": [
+        {
+            "label": "Discovering Cafes",
+            "value": 2
+        },
+        {
+            "label": "Studious Study Sessions",
+            "value": 10
+        },
+        {
+            "label": "Foodie Breakthrough",
+            "value": 5
+        },
+	{
+            "label": "Browsing Bookstores",
+            "value": 3
+        },
+	{
+            "label": "PARTY PARTY",
+            "value": 7
+        }
+
+    ]
+}
